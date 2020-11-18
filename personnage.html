@@ -7,16 +7,26 @@
 </head>
 <body>
     <script>
-        let myJSON = '{"nom" : "Klad","classe" : "guerrier","age" : 28,"arme1" : "épee", "arme2" : "bouclier" }';
+        let myJSON = '{"nom" : "Klad","classe" : "guerrier","age" : 28,"armes" : ["épee", " bouclier"] }';
         let myNewJSON = JSON.parse(myJSON);
         // logs a JavaScript object, not a string
         console.log(myNewJSON);
         console.log(myNewJSON.nom); 
         console.log(myNewJSON.classe); 
         console.log(myNewJSON.age);
-        console.log(myNewJSON.arme1);
-        console.log(myNewJSON.arme2);
+        console.log(myNewJSON.armes);
 
+        let body = document.body;
+        let newJson = document.createElement('p');
+        //let newTexte = document.createTextNode('Texte écrit en JavaScript');
+
+        newJson.textContent = myNewJSON.nom +" - "+ myNewJSON.classe +" - " + myNewJSON.age +" - "+ myNewJSON.armes;
+        
+        //Ajoute le paragraphe créé comme premier enfant de l'élément body
+        body.prepend(newJson);
+
+        //Ajoute le texte créé comme dernier enfant de l'élément body
+        //b.append(newTexte);
     </script>
 </body>
 </html>
